@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title  %}Symphart Articles{% endblock %}
+
+{% block body %} 
+
+<h1>My Name Is {{name}}</h1>
+
+{% if article %}
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Article Title</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for art in article %}
+				<tr>
+					<td>{{art}}</td>
+					<td><a href="/article/1" class="btn btn-success">Show</a></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<p>No Article Found</p>
+{% endif %}
+
+{% endblock %}
+
